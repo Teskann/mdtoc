@@ -132,3 +132,4 @@ marko | `1.1.0`
 1. [Marko documentation (used to parse markdown files)](https://pypi.org/project/marko/)
 2. [GitHub Guide : Mastering Markdown](https://guides.github.com/features/mastering-markdown/)
 3. [Markdown Wikipedia](https://fr.wikipedia.org/wiki/Markdown)
+4. [mdtoc documentation](https://teskann.github.io/mdtoc-documentation/)
