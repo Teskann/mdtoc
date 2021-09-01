@@ -5,7 +5,7 @@ Create tables of contents for your markdown files !
 ![Before / After](examples/example.jpg)
 
 [](mdtoc)
-## Table of Contents
+#### Table of Contents
 
 * [Features](#features)
 * [Getting Started :computer:](#getting-started-computer)
@@ -26,6 +26,7 @@ Create tables of contents for your markdown files !
 - :heavy_check_mark: Supports special characters and emojis in titles
 - :heavy_check_mark: Can be used recursively on multiple files
 - :heavy_check_mark: Update current table of content if it exists
+- :heavy_check_mark: Chose the maximum and minimum headers level
 - :heavy_check_mark: Easy to use !
 
 ## Getting Started :computer:
@@ -47,7 +48,7 @@ make
 
 You can now use `mdtoc` as a console application ! :tada:
 
-> :bulb: Delete the source files if you wish :
+> :bulb: You don't need the source files anymore, delete them :
 >```commandline
 >cd .. && rm -rf mdtoc
 >```
