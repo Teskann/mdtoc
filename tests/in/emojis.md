@@ -10,7 +10,7 @@
 
 ### This title does not !
 
-# This title contains multiple symbols @&é"'(-)?./§
+# This title contains multiple symbols @&áÁàÀâÂäÄãÃåÅæÆçÇéÉèÈêÊëËíÍìÌîÎïÏñÑóÓòÒôÔöÖõÕøØœŒßúÚùÙûÛüÜé"'(-)?./§
 
 ## Header 2
 
