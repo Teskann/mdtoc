@@ -5,6 +5,18 @@ Create tables of contents for your markdown files !
 ![Before / After](examples/example.jpg)
 
 [](mdtoc)
+## Table of Contents
+
+* [Features](#features)
+* [Getting Started :computer:](#getting-started-computer)
+	* [Prerequisites](#prerequisites)
+	* [Installation](#installation)
+* [Usage](#usage)
+	* [Examples](#examples)
+	* [Console Application Parameters](#console-application-parameters)
+	* [Chose the place of the ToC in your file](#chose-the-place-of-the-toc-in-your-file)
+* [Compatibility](#compatibility)
+* [References](#references)
 [](/mdtoc)
 
 ## Features
@@ -57,9 +69,34 @@ positional arguments:
   input                 Input file/directory. If you give a directory (with -r or not), mdtoc is
                         applied on all *.md files. If the input does not contain a mdtoc table of
                         content, it is created at the beginning of the file. If you wish to put
-                        the ToC elsewhere, add a placeholder in your file (`[](mdtoc) ...
-                        [](/mdtoc)`). If this placeholder is already in the file, all the content
-                        between `[](mdtoc)` and `[](/mdtoc)` is replaced by the TOC.
+                        the ToC elsewhere, add a placeholder in your file (`[](mdtoc)
+## Table of Contents
+
+* [Features](#features)
+* [Getting Started :computer:](#getting-started-computer)
+	* [Prerequisites](#prerequisites)
+	* [Installation](#installation)
+* [Usage](#usage)
+	* [Examples](#examples)
+	* [Console Application Parameters](#console-application-parameters)
+	* [Chose the place of the ToC in your file](#chose-the-place-of-the-toc-in-your-file)
+* [Compatibility](#compatibility)
+* [References](#references)
+[](/mdtoc)`). If this placeholder is already in the file, all the content
+                        between `[](mdtoc)
+## Table of Contents
+
+* [Features](#features)
+* [Getting Started :computer:](#getting-started-computer)
+	* [Prerequisites](#prerequisites)
+	* [Installation](#installation)
+* [Usage](#usage)
+	* [Examples](#examples)
+	* [Console Application Parameters](#console-application-parameters)
+	* [Chose the place of the ToC in your file](#chose-the-place-of-the-toc-in-your-file)
+* [Compatibility](#compatibility)
+* [References](#references)
+[](/mdtoc)` is replaced by the TOC.
 
 optional arguments:
   -h, --help            show this help message and exit
@@ -84,16 +121,40 @@ optional arguments:
 
 If you run `mdtoc` on a file for the first time, the table of contents is
 set at the beginning of the file. If you wish to put it elsewhere, add
-placeholders `[](mdtoc)` and `[](/mdtoc)` in your file :
+placeholders `[](mdtoc)
+## Table of Contents
+
+* [Features](#features)
+* [Getting Started :computer:](#getting-started-computer)
+	* [Prerequisites](#prerequisites)
+	* [Installation](#installation)
+* [Usage](#usage)
+	* [Examples](#examples)
+	* [Console Application Parameters](#console-application-parameters)
+	* [Chose the place of the ToC in your file](#chose-the-place-of-the-toc-in-your-file)
+* [Compatibility](#compatibility)
+* [References](#references)
+[](/mdtoc)` in your file :
 
 ```markdown
 # This is my title
 
 This is the description of the file
 
-[](mdtoc)  <-- Placeholder to indicate the beginning of the ToC
-The table of content will be here !
-Placeholder to indicate the end of the ToC -->  [](/mdtoc)
+[](mdtoc)
+## Table of Contents
+
+* [Features](#features)
+* [Getting Started :computer:](#getting-started-computer)
+	* [Prerequisites](#prerequisites)
+	* [Installation](#installation)
+* [Usage](#usage)
+	* [Examples](#examples)
+	* [Console Application Parameters](#console-application-parameters)
+	* [Chose the place of the ToC in your file](#chose-the-place-of-the-toc-in-your-file)
+* [Compatibility](#compatibility)
+* [References](#references)
+[](/mdtoc)
 
 ## Section 1
 
@@ -113,3 +174,9 @@ Software | Version
 Operating System | Ubuntu `20.04`
 Python | `3.8.8`
 marko | `1.1.0`
+
+## References
+
+1. [Marko documentation (used to parse markdown files)](https://pypi.org/project/marko/)
+2. [GitHub Guide : Mastering Markdown](https://guides.github.com/features/mastering-markdown/)
+3. [Markdown Wikipedia](https://fr.wikipedia.org/wiki/Markdown)

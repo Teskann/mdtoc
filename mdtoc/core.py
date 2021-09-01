@@ -87,7 +87,7 @@ def get_toc(markdown_content, min_depth=None, max_depth=None):
         String content of the table of contents, in markdown format
     """
     p = Parser()
-    parsed = p.parse(re.sub(r"(?<=\[]\(mdtoc\)).*(?=\[]\(/mdtoc\))", "", markdown_content, flags=re.DOTALL))
+    parsed = p.parse(re.sub(r"(?<=\[]\(mdtoc\)).*?(?=\[]\(/mdtoc\))", "", markdown_content, flags=re.DOTALL))
     toc = ""
     hrefs = []
 
@@ -164,4 +164,4 @@ def generate_toc(markdown_content, toc_title="Table of Contents", toc_level=1,
         lines.insert(0, "[](mdtoc)\n# " + toc_title + "\n\n" + toc + "[](/mdtoc)\n")
         return '\n'.join(lines)
     else:
-        return re.sub(r"(?<=\[]\(mdtoc\)).*(?=\[]\(/mdtoc\))", "\n" + "#" * toc_level + " " + toc_title + "\n\n" + toc, markdown_content, flags=re.DOTALL)
+        return re.sub(r"(?<=\[]\(mdtoc\)).*?(?=\[]\(/mdtoc\))", "\n" + "#" * toc_level + " " + toc_title + "\n\n" + toc, markdown_content, flags=re.DOTALL)
