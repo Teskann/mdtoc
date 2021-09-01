@@ -1,0 +1,7 @@
+venv
+.idea
+delivery
+build
+dist
+.eggs
+*.egg-info

@@ -5,7 +5,7 @@ This is a dummy paragraph
 I'd like the toc to be below :
 
 [](mdtoc)
-## Table of Contents
+# Table of Contents
 
 * [Dummy title](#dummy-title)
 	* [H2](#h2)

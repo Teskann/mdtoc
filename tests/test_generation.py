@@ -1,6 +1,6 @@
 from os.path import abspath, dirname, join
 import unittest
-from mdtoc.mdtoc import generate_toc
+from mdtoc.core import generate_toc
 
 
 class TestMdtoc(unittest.TestCase):
@@ -34,6 +34,14 @@ class TestMdtoc(unittest.TestCase):
         with open(join(self.ref_path, 'no_headings.md')) as f:
             self.assertEqual(f.read(), out)
 
+    def test_update_thismd(self):
+        with open(join(self.in_path, 'update_this.md')) as f:
+            out = generate_toc(f.read())
+            with open(join(self.out_path, 'update_this.md'), 'w') as f_out:
+                f_out.write(out)
+        with open(join(self.ref_path, 'update_this.md')) as f:
+            self.assertEqual(f.read(), out)
+
     def test_same_namemd(self):
         with open(join(self.in_path, 'same_name.md')) as f:
             out = generate_toc(f.read())
@@ -56,6 +64,14 @@ class TestMdtoc(unittest.TestCase):
             with open(join(self.out_path, 'emojis.md'), 'w') as f_out:
                 f_out.write(out)
         with open(join(self.ref_path, 'emojis.md')) as f:
+            self.assertEqual(f.read(), out)
+
+    def test_content_in_placeholdermd(self):
+        with open(join(self.in_path, 'content_in_placeholder.md')) as f:
+            out = generate_toc(f.read())
+            with open(join(self.out_path, 'content_in_placeholder.md'), 'w') as f_out:
+                f_out.write(out)
+        with open(join(self.ref_path, 'content_in_placeholder.md')) as f:
             self.assertEqual(f.read(), out)
 # PLACEHOLDER_END
 

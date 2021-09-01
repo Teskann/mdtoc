@@ -73,8 +73,8 @@ def get_toc(markdown_content, min_depth=None, max_depth=None):
 
         Defaults to `None`
 
-    min_depth: int or None
-        Maximum heading level. If this is set to `None`, there is no minimum
+    max_depth: int or None
+        Maximum heading level. If this is set to `None`, there is no maximum
         depth applied. For example, if you set max_depth to `3`, all the
         headings with level > 3 will be ignored (such as "#### Dummy Heading").
 
@@ -87,21 +87,25 @@ def get_toc(markdown_content, min_depth=None, max_depth=None):
         String content of the table of contents, in markdown format
     """
     p = Parser()
-    parsed = p.parse(markdown_content)
+    parsed = p.parse(re.sub(r"(?<=\[]\(mdtoc\)).*(?=\[]\(/mdtoc\))", "", markdown_content, flags=re.DOTALL))
     toc = ""
     hrefs = []
+
+    if min_depth is None:
+        min_depth = 1
 
     # Get all the heading elements
     for child in parsed.children:
         if isinstance(child, Heading):
             if min_depth is None or child.level >= min_depth:
                 if max_depth is None or child.level <= max_depth:
-                    toc += "\t" * (child.level - 1) + f"* [{child.children[0].children}]({get_href(child.children[0].children, hrefs)})\n"
+                    toc += "\t" * (child.level - min_depth) + f"* [{child.children[0].children}]({get_href(child.children[0].children, hrefs)})\n"
             hrefs.append(get_href(child.children[0].children, hrefs))
     return toc
 
 
-def generate_toc(markdown_content, toc_title="Table of Contents", toc_level=2, min_depth=None, max_depth=None):
+def generate_toc(markdown_content, toc_title="Table of Contents", toc_level=1,
+                 min_depth=None, max_depth=None):
     """
     Description
     -----------
@@ -114,7 +118,18 @@ def generate_toc(markdown_content, toc_title="Table of Contents", toc_level=2, m
 
     markdown_content: str
         Markdown content. Is typically the content of a readme.md file. It can
-        contain a table of contents.
+        contain a table of contents between the placeholder "[](mdtoc)" and
+        "[](/mdtoc)".
+
+    toc_title : str
+        Table of content heading name.
+
+        Defaults to "Table of Contents"
+
+    toc_level : int
+        Heading level of the table of content section.
+
+        Defaults to 1.
 
     min_depth: int or None
         Minimum heading level. If this is set to `None`, there is no minimum
@@ -123,8 +138,8 @@ def generate_toc(markdown_content, toc_title="Table of Contents", toc_level=2, m
 
         Defaults to `None`
 
-    min_depth: int or None
-        Maximum heading level. If this is set to `None`, there is no minimum
+    max_depth: int or None
+        Maximum heading level. If this is set to `None`, there is no maximum
         depth applied. For example, if you set max_depth to `3`, all the
         headings with level > 3 will be ignored (such as "#### Dummy Heading").
 
@@ -133,8 +148,8 @@ def generate_toc(markdown_content, toc_title="Table of Contents", toc_level=2, m
     Returns
     -------
 
-    toc : str
-        String content of the table of contents, in markdown format
+    md_with_toc : str
+        String content of the markdown, with the table of contents
     """
 
     toc = get_toc(markdown_content, min_depth, max_depth)
