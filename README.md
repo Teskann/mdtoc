@@ -2,6 +2,8 @@
 
 Create tables of contents for your markdown files !
 
+![Before / After](examples/example.jpg)
+
 [](mdtoc)
 [](/mdtoc)
 
