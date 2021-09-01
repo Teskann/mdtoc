@@ -35,10 +35,13 @@ def get_href(heading, hrefs=[]):
     >>> get_href("This is My Heading with an emoji ! :fire:")
     '#this-is-my-heading-with-an-emoji-'
     """
+
+    accented = "áÁàÀâÂäÄãÃåÅæÆçÇéÉèÈêÊëËíÍìÌîÎïÏñÑóÓòÒôÔöÖõÕøØœŒßúÚùÙûÛüÜ"
+
     href = heading.lower()
-    href = re.sub(r":\w+:", "", href)
-    href = "#" + re.sub(r"[^A-Za-z0-9\-\s]+", "", href)
-    href = re.sub(r"\s+", "-", href)
+    # href = re.sub(r":\w+:", "", href)
+    href = "#" + re.sub(r"[^A-Za-z0-9\-\s" + accented + r"]+", "", href)
+    href = re.sub(r"\s", "-", href)
 
     if href in hrefs:
         i = 1
