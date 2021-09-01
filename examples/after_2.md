@@ -20,7 +20,7 @@ This consists in a simple tool to write "Hello World" in a file !
 		* [Basic](#basic)
 		* [Advanced](#advanced)
 	* [Contribute](#contribute)
-	* [Known Issues :exclamations:](#known-issues-exclamations)
+	* [Known Issues :exclamation:](#known-issues-exclamation)
 	* [References](#references)
 [](/mdtoc)
 
@@ -97,7 +97,7 @@ details.
 Do not forget to read the [code documentation]() and to take a look at the
 [wiki]().
 
-## Known Issues :exclamations:
+## Known Issues :exclamation:
 
 There is a known crash if the file does not exists. Should be fixed soon.
 
