@@ -1,6 +1,12 @@
 # This title contains a wave ! :ocean:
 
+# This title contains a wave :ocean:
+
+# This title contains a wave:ocean:
+
 ## This title too ! :fire:
+
+## Symbols ! ! ! !  !   !    !
 
 ### This title does not !
 

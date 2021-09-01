@@ -3,7 +3,7 @@ from marko.parser import Parser
 import re
 
 
-def get_href(heading):
+def get_href(heading, hrefs=[]):
     """
     Description
     -----------
@@ -15,6 +15,10 @@ def get_href(heading):
 
     heading : str
         Heading string content
+
+    hrefs: list of str
+        List containing the hrefs that are already in the ToC (to avoid
+        dupicates)
 
     Returns
     -------
@@ -35,6 +39,13 @@ def get_href(heading):
     href = re.sub(r":\w+:", "", href)
     href = "#" + re.sub(r"[^A-Za-z0-9\-\s]+", "", href)
     href = re.sub(r"\s+", "-", href)
+
+    if href in hrefs:
+        i = 1
+        while href + "-" + str(i) in hrefs:
+            i += 1
+        href += "-" + str(i)
+
     return href
 
 
@@ -75,13 +86,15 @@ def get_toc(markdown_content, min_depth=None, max_depth=None):
     p = Parser()
     parsed = p.parse(markdown_content)
     toc = ""
+    hrefs = []
 
     # Get all the heading elements
     for child in parsed.children:
         if isinstance(child, Heading):
             if min_depth is None or child.level >= min_depth:
                 if max_depth is None or child.level <= max_depth:
-                    toc += "\t" * (child.level - 1) + f"* [{child.children[0].children}]({get_href(child.children[0].children)})\n"
+                    toc += "\t" * (child.level - 1) + f"* [{child.children[0].children}]({get_href(child.children[0].children, hrefs)})\n"
+            hrefs.append(get_href(child.children[0].children, hrefs))
     return toc
 
 
