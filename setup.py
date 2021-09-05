@@ -1,6 +1,7 @@
 from setuptools import setup, find_packages
 
 setup(
+    name="mdtoc",
     setup_requires=['setuptools_scm'],
     use_scm_version=True,
     packages=find_packages(),

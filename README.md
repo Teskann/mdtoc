@@ -41,7 +41,7 @@ You need :
 ### Installation
 
 ```commandline
-git clone git@github.com:Teskann/mdtoc.git
+git clone https://github.com/Teskann/mdtoc
 cd mdtoc
 make
 ```
