@@ -1,6 +1,6 @@
 # Markdown Table of Contents (mdtoc) :bookmark_tabs:
 
-[![Build Status](https://scrutinizer-ci.com/g/Teskann/mdtoc/badges/build.png?b=master)](https://scrutinizer-ci.com/g/Teskann/mdtoc/build-status/master)
+[![Build and tests](https://github.com/Teskann/mdtoc/actions/workflows/mdtoc-python.yml/badge.svg)](https://github.com/Teskann/mdtoc/actions/workflows/mdtoc-python.yml)
 [![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/Teskann/mdtoc/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/Teskann/mdtoc/?branch=master)
 
 Create tables of contents for your markdown files !
